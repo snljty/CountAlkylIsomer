@@ -147,7 +147,7 @@ void Alkanes_counter::calc_stereo_alkane(int n) {
         f_n += 8 * stereo_alkyl[i] * stereo_alkyl[j];
     }
     // |A_4| = 4!/2 = 12
-    if (f_n % 12 != 0) throw std::runtime_error("Error: P(x) calculation wrong.");
+    if (f_n % 12 != 0) throw std::runtime_error("Error: F(x) calculation wrong.");
     f_n /= 12;
 
     // all unique carbon-carbon bonds in all isomers
@@ -163,7 +163,7 @@ void Alkanes_counter::calc_stereo_alkane(int n) {
         g_n += stereo_alkyl[i];
     }
     // |S_2| = 2! = 2
-    if (g_n % 2 != 0)  throw std::runtime_error("Error: Q(x) calculation wrong.");
+    if (g_n % 2 != 0)  throw std::runtime_error("Error: G(x) calculation wrong.");
     g_n /= 2;
     // contribution of - B(x)
     g_n -= stereo_alkyl[n];
