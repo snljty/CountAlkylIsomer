@@ -38,6 +38,31 @@ int main(int argc, const char *argv[]) {
         }
         std::cout << std::setw(8) << label << counter.get_alkane(n) << '\n';
     }
+    std::cout << std::endl;
+
+    std::cout << "Stereo alkyl:" << std::endl;
+    for (int n = 1; n <= max_n_count; ++ n) {
+        int m = 2 * n + 1;
+        if (n == 1) {
+            label = "CH" + std::to_string(m) + "-:";
+        } else {
+            label = "C" + std::to_string(n) + "H" + std::to_string(m) + "-:";
+        }
+        std::cout << std::setw(9) << label << counter.get_stereo_alkyl(n) << '\n';
+    }
+    std::cout << std::endl;
+
+    std::cout << "Stereo alkane:" << std::endl;
+    for (int n = 1; n <= max_n_count; ++ n) {
+        int m = 2 * n + 2;
+        if (n == 1) {
+            label = "CH" + std::to_string(m) + ":";
+        } else {
+            label = "C" + std::to_string(n) + "H" + std::to_string(m) + ":";
+        }
+        std::cout << std::setw(8) << label << counter.get_stereo_alkane(n) << '\n';
+    }
+    std::cout << std::endl;
 
     return 0;
 }
